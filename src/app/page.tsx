@@ -15,6 +15,7 @@ export default function Home() {
 
   const nextQuestion = () => {
     if (current === questions.length - 1) {
+      console.log('end of questions');
     }else{
       setCurrent(current + 1);
     }
@@ -36,7 +37,11 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.app}>
-        <ProgressBar handleClose={resetProgress} current={current} total={questions.length} />
+        <ProgressBar
+          handleClose={resetProgress}
+          current={current + 1}
+          total={questions.length}
+        />
         <Typography
           sx={{
             color: "#50535e",
