@@ -40,4 +40,5 @@ export const progressBar = (progress: number): SxProps => ({
   zIndex: 2,
   width: `${progress}%`,
   backgroundColor: '#84a0fb',
+  transition: 'width 0.5s ease-in-out',
 })
