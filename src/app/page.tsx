@@ -12,7 +12,6 @@ import { ControlButton } from '@/components/ControlButton';
 export default function Home() {
   const [ current, setCurrent ] = useState(0);
 
-
   const nextQuestion = () => {
     if (current === questions.length - 1) {
       console.log('end of questions');
