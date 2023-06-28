@@ -5,7 +5,7 @@ export const questions = [
   },
   {
     name: "Strawberry",
-    image: "/images/strawberry.jpg",
+    image: "/images/strawberry.png",
   },
   {
     name: "Platano",
@@ -13,6 +13,6 @@ export const questions = [
   },
   {
     name: "Strawberry",
-    image: "/images/strawberry.jpg",
+    image: "/images/strawberry.png",
   }
 ];
