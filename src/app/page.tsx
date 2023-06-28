@@ -6,8 +6,7 @@ import { QuestionCard } from '../components/QuestionCard';
 import { questions } from '../constants/questions';
 import styles from './page.module.css'
 import { Typography, Box, IconButton } from '@mui/material';
-import ThumbDownIcon from '@mui/icons-material/ThumbDown';
-import ThumbUpIcon from '@mui/icons-material/ThumbUp';
+
 import { ControlButton } from '@/components/ControlButton';
 
 export default function Home() {
@@ -37,7 +36,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.app}>
-        <ProgressBar current={current + 1} total={questions.length} />
+        <ProgressBar handleClose={resetProgress} current={current} total={questions.length} />
         <Typography
           sx={{
             color: "#50535e",

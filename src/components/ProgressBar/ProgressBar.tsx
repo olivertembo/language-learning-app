@@ -8,16 +8,17 @@ import * as styles from "./styles";
 export interface ProgressBarProps {
   total: number;
   current: number;
+  handleClose: () => void;
 }
 
 export const ProgressBar = (props: ProgressBarProps) => {
-  const { total, current } = props;
+  const { total, current, handleClose } = props;
   const progress = (current / total) * 100;
   
   return (
     <Box sx={styles.container}>
       <Box sx={styles.cancelButton}>
-        <IconButton aria-label="delete" size="medium">
+        <IconButton onClick={handleClose} aria-label="delete" size="medium">
           <CloseIcon fontSize="inherit" />
         </IconButton>
       </Box>
