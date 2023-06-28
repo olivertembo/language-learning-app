@@ -5,15 +5,39 @@ import { ProgressBar }  from '../components/ProgressBar';
 import { QuestionCard } from '../components/QuestionCard';
 import { questions } from '../constants/questions';
 import styles from './page.module.css'
-import { Typography } from '@mui/material';
+import { Typography, Box, IconButton } from '@mui/material';
+import ThumbDownIcon from '@mui/icons-material/ThumbDown';
+import ThumbUpIcon from '@mui/icons-material/ThumbUp';
+import { ControlButton } from '@/components/ControlButton';
 
 export default function Home() {
-  const [ current, setCurrent ] = useState(1);
+  const [ current, setCurrent ] = useState(0);
+
+
+  const nextQuestion = () => {
+    if (current === questions.length - 1) {
+    }else{
+      setCurrent(current + 1);
+    }
+  }
+
+  const resetProgress = () => {
+    setCurrent(0);
+  }
+
+  const handleDislike = () => {
+    nextQuestion();
+  }
+
+  const handleLike = () => {
+    nextQuestion();
+  }
+
 
   return (
     <main className={styles.main}>
       <div className={styles.app}>
-        <ProgressBar current={1} total={questions.length} />
+        <ProgressBar current={current + 1} total={questions.length} />
         <Typography
           sx={{
             color: "#50535e",
@@ -36,6 +60,7 @@ export default function Home() {
           name={questions[current].name}
           image={questions[current].image}
         />
+        <ControlButton handleDislike={handleDislike} handleLike={handleLike} />
       </div>
     </main>
   );
